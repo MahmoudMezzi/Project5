@@ -14,6 +14,11 @@ const slides = [
 	{
 		"image": "slide4.png",
 		"tagLine": "Autocollants <span>avec découpe laser sur mesure</span>"
+	},
+
+	{
+		"image": "slide4.png",
+		"tagLine": "Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
 
@@ -28,7 +33,7 @@ const nbr = slides.length;
 let currentSlide = 0;
 
 
-
+/* declaration de la function sans execution*/
 function dots() {
 	const dots = document.querySelector('.dots');
 	for (let currentSlide = 0; currentSlide < nbr; currentSlide++) {
@@ -40,6 +45,7 @@ function dots() {
 		}
 	}
 }
+/* execution */
 dots();
 
 function selected() {
@@ -57,22 +63,12 @@ function showSlide() {
 }
 
 left.addEventListener("click", function () {
-	if (currentSlide == 0) {
-		currentSlide = nbr - 1;
-	}
-	else {
-		currentSlide--;
-	}
-	console.log(left);
+	currentSlide === 0 ? currentSlide = nbr - 1 : currentSlide--
 	showSlide();
 });
 
 right.addEventListener("click", function () {
-	if (currentSlide == nbr - 1) {
-		currentSlide = 0;
-	} else {
-		currentSlide++;
-	}
+	/*condition du if*/currentSlide == nbr - 1 ?/*effet du if*/ currentSlide = 0 :/*else*/ currentSlide++
 	showSlide();
 
 });
